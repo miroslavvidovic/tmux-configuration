@@ -1,2 +1,2 @@
-# tmux_configuration
+# tmux-configuration
 Tmux settings and management
