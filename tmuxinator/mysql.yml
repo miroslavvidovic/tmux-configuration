@@ -1,0 +1,33 @@
+# ~/.tmuxinator/mysql.yml
+
+name: mysql
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+#pre: sudo service mysql start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim
+        - sudo service mysql start
+  - mysql-server: mysql -u root -p
+  - mysql-logs:
+      layout: main-vertical
+      panes:
+        - tail -f  /var/log/mysql/error.log
+        - tail -f  /var/log/mysql/mysql.log
+        - tail -f  /var/log/mysql/mysql-slow.log
