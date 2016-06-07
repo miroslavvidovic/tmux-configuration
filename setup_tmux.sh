@@ -17,12 +17,13 @@
 # Check for tmuxinator
 # If a program  is installed return 0
 # and if not return 1
-# Function takes the program name as the first param
+# Function takes the program name as the first parameter
+
 is_installed() {
-    if ! type "$1" 2> /dev/null; then
-        return 1
-    else
-        return 0
+  if ! type "$1" 2> /dev/null; then
+      return 1
+  else
+      return 0
     fi
 }
 
@@ -35,7 +36,7 @@ fi
 
 # Copy all tmuxinator files
 if is_installed tmuxinator ; then
-  cp tmuxinator/* ~/.tmuxinator
+  cp -ir tmuxinator  ~/
 else
   echo "Tmuxinator not installed. Install tmuxinator first."
 fi
