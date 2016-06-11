@@ -32,17 +32,17 @@ windows:
   - access:
       layout: main-horizontal
       panes:
-        - tail -f /var/log/apache2/access.log.1
+        - tail -f /var/log/apache2/access.log.1 | ccze
 
   - error:
       layout: main-horizontal
       panes:
-        - tail -f /var/log/apache2/error.log
+        - tail -f /var/log/apache2/error.log | ccze
 
   - error1:
       layout: main-horizontal
       panes:
-        - tail -f /var/log/apache2/error.log.1
+        - tail -f /var/log/apache2/error.log.1 | ccze
 
   - web:
       layout: main-horizontal
