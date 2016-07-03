@@ -1,0 +1,23 @@
+# ~/.tmuxinator/py-dev.yml
+
+name: py-dev
+root: ~/
+
+# Python development
+# Zsh, PyCharm, IPython, list all installed packages with pip freeze command
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - charm& zsh
+
+  - ipython:
+      layout: main-horizontal
+      panes:
+        - ipython3
+
+  - packages:
+      layout: main-horizontal
+      panes:
+        - pip freeze
