@@ -1,6 +1,6 @@
-# ~/.tmuxinator/php.yml
+# ~/.tmuxinator/php-dev.yml
 
-name: php
+name: php-dev
 root: ~/
 
 # Optional tmux socket
