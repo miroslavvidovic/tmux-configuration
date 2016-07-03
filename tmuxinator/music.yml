@@ -1,0 +1,16 @@
+# ~/.tmuxinator/music.yml
+
+name: music
+root: ~/
+
+# Start the music player and alsamixer
+
+windows:
+  - alsa:
+      layout: main-vertical
+      panes:
+        - alsamixer
+  - player:
+      layout: main-vertical
+      panes:
+        - cmus
