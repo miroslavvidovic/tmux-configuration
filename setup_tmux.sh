@@ -30,6 +30,7 @@ is_installed() {
 # Copy tmux conf
 if is_installed tmux ; then
   cp -i tmux.conf ~/.tmux.conf
+  echo "Copying tmux configuration."
 else
   echo "Tmux not installed. Install tmux first."
 fi
@@ -37,8 +38,10 @@ fi
 # Copy all tmuxinator files
 if is_installed tmuxinator ; then
   cp -ir tmuxinator  ~/
+  echo "Copying tmuxinator configuration."
 else
   echo "Tmuxinator not installed. Install tmuxinator first."
 fi
 
+echo "Done"
 exit 0
