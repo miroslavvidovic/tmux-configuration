@@ -1,0 +1,37 @@
+# ~/.tmuxinator/bash-dev.yml
+
+name: bash-dev
+root: ~/
+
+# Bash development
+
+windows:
+  - zsh:
+      layout: main-vertical
+      panes:
+        - zsh
+
+  - vim:
+      layout: main-horizontal
+      panes:
+        - vim
+
+  - active_projects:
+      layout: main-horizontal
+      panes:
+        - cd ~/Projekti/Bash; ls -al
+
+  - finished_projects:
+      layout: main-horizontal
+      panes:
+        - cd ~/Projekti/Bash/Zavrseno; ls -al
+
+  - bash_scripts_repo:
+      layout: main-horizontal
+      panes:
+        - cd ~/Projekti/Github/bash-scripts; ls -al
+
+  - references:
+      layout: main-horizontal
+      panes:
+        - cd ~/Čitanje/Bash/Referece; ls -al
