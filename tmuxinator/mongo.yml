@@ -3,26 +3,18 @@
 name: mongo
 root: ~/
 
-# Optional tmux socket
-# socket_name: foo
+# Start mongo service and watch mongo logs
+# ccze is the log colorizer
 
-# Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
-pre: sudo /usr/bin/mongod start
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
-
-# Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
-
-# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-# tmux_command: byobu
+# start mongo
+pre: systemctl start mongodb.service
 
 windows:
-  - editor:
+  - main:
       layout: main-horizontal
       panes:
-        - vim
-        - sudo service mongod status
+        - systemctl status mongodb.service
   - mongo: mongo
-  - logs: tail -f /var/log/mongodb/mongod.log
+  - log: tail -f /var/log/mongodb/mongodb.log | ccze
+  - log1: tail -f /var/log/mongodb/mongodb.log.1 | ccze
+
