@@ -18,7 +18,6 @@
 # If a program  is installed return 0
 # and if not return 1
 # Function takes the program name as the first parameter
-
 is_installed() {
   if ! type "$1" 2> /dev/null; then
       return 1
@@ -37,7 +36,8 @@ fi
 
 # Copy all tmuxinator files
 if is_installed tmuxinator ; then
-  cp -ir tmuxinator  ~/
+  mkdir -p $HOME/.tmuxinator
+  cp -ir tmuxinator/*  $HOME/.tmuxinator
   echo "Copying tmuxinator configuration."
 else
   echo "Tmuxinator not installed. Install tmuxinator first."
