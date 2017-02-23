@@ -2,22 +2,19 @@
 
 # -------------------------------------------------------
 # Info:
-# 	Miroslav Vidovic
-# 	setup_tmux.sh
-# 	01.04.2016.-11:45:17
+#   Miroslav Vidovic
+#   setup_tmux.sh
+#   01.04.2016.-11:45:17
 # -------------------------------------------------------
 # Description:
-#  Script to setup tmux files. Copy .tmux.conf to home
-#  and tmuxinator files to .tmuxinator directory.
+#  Script to setup tmux files. Copy .tmux.conf to $HOME
+#  and tmuxinator files to $HOME/.tmuxinator directory.
 # Usage:
 #
 # -------------------------------------------------------
 # Script:
 
-# Check for tmuxinator
-# If a program  is installed return 0
-# and if not return 1
-# Function takes the program name as the first parameter
+# Check if installed
 is_installed() {
   if ! type "$1" 2> /dev/null; then
       return 1
