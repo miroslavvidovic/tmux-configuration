@@ -5,7 +5,7 @@ My tmux and tmuxinator configuration files
 Clone the repository and run the setup-tmux.sh script.
 
 ## Requirements
-- [powerline fonts] (https://github.com/powerline/fonts) for status line symbols
+- [powerline fonts](https://github.com/powerline/fonts) for status line symbols
 
 ## Plugins
 This configuration uses the Tmux Plugin Manager [tpm](https://github.com/tmux-plugins/tpm)
