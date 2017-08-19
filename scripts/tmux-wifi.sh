@@ -5,8 +5,8 @@
 #   author:    Miroslav Vidovic
 #   file:      tmux-wifi.sh
 #   created:   23.02.2017.-10:58:43
-#   revision:  ---
-#   version:   1.0
+#   revision:  19.08.2017.
+#   version:   1.1
 # -----------------------------------------------------------------------------
 # Requirements: 
 # 
@@ -25,7 +25,6 @@ readonly INTERFACE=wlo1
 get_signal(){
 if [ "$(ifconfig $INTERFACE | grep UP | wc -l) -eq 1" ]; then
   link_quality="$(iwconfig $INTERFACE | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)"
-  link_name="$(iwconfig $INTERFACE | grep ESSID | cut -d':' -f2)"
 
   SIGNAL_QUALITY=$(($link_quality * 100 / 70))
 
