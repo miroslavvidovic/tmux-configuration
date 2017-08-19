@@ -6,7 +6,7 @@
 #   file:      setup-tmux.sh
 #   created:   01.04.2016.-11:45:17
 #   revision:  19.08.2017.
-#   version:   1.1
+#   version:   1.2
 # -----------------------------------------------------------------------------
 # Requirements:
 #   tmux, git
@@ -64,9 +64,16 @@ set_up_tpm() {
   fi
 }
 
+set_up_themes() {
+  echo " => themes"
+  mkdir -p "$HOME"/.tmux/themes
+  cp -ir themes/* "$HOME"/.tmux/themes
+}
+
 main() {
   set_up_tmux
   set_up_tmuxinator
+  set_up_themes
   set_up_tpm
   echo "Done"
 }
