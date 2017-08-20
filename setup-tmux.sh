@@ -5,8 +5,8 @@
 #   author:    Miroslav Vidovic
 #   file:      setup-tmux.sh
 #   created:   01.04.2016.-11:45:17
-#   revision:  19.08.2017.
-#   version:   1.2
+#   revision:  20.08.2017.
+#   version:   1.3
 # -----------------------------------------------------------------------------
 # Requirements:
 #   tmux, git
@@ -42,22 +42,22 @@ set_up_tmuxinator() {
   if is_installed tmuxinator ; then
     mkdir -p "$HOME"/.tmuxinator
     echo " => tmuxinator configuration"
-    cp -ir tmuxinator/*  "$HOME"/.tmuxinator
+    cp -r tmuxinator/*  "$HOME"/.tmuxinator
   else
     echo "Tmuxinator not installed. Install tmuxinator first."
   fi
 }
 
+# Clone or update the tmux package manager
 set_up_tpm() {
-  # Clone or update the tmux package manager
   local repo=~/.tmux/plugins/tpm
   if is_installed git; then
     if cd "$repo"; then
       echo " => updating tpm"
-      git pull 
+      git pull
     else
       echo " => installing tpm"
-      git clone https://github.com/tmux-plugins/tpm "$repo" 
+      git clone https://github.com/tmux-plugins/tpm "$repo"
     fi
   else
     echo "Git is not installed install git first."
@@ -65,9 +65,9 @@ set_up_tpm() {
 }
 
 set_up_themes() {
-  echo " => themes"
+  echo " =>installing themes"
   mkdir -p "$HOME"/.tmux/themes
-  cp -ir themes/* "$HOME"/.tmux/themes
+  cp -r themes/* "$HOME"/.tmux/themes
 }
 
 main() {
@@ -78,6 +78,6 @@ main() {
   echo "Done"
 }
 
-main 
+main
 
 exit 0
