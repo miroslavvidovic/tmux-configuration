@@ -12,6 +12,7 @@ Clone the repository and run the setup-tmux.sh script.
 
 ## Requirements
 - [powerline fonts](https://github.com/powerline/fonts) for status line symbols
+- [facebook PathPicker](https://github.com/facebook/PathPicker) to open fpp in a new tmux window
 
 ## Scripts
 - tmux-ssh - Detect if a shell is controlled through SSH and display it to the user
