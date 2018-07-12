@@ -13,10 +13,12 @@ Clone the repository and run the setup-tmux.sh script.
 ## Requirements
 - [powerline fonts](https://github.com/powerline/fonts) for status line symbols
 - [facebook PathPicker](https://github.com/facebook/PathPicker) to open fpp in a new tmux window
+- [fzf](https://github.com/junegunn/fzf) choose a tmux pane with fzf
 
 ## Scripts
 - tmux-ssh - Detect if a shell is controlled through SSH and display it to the user
 - tmux-wifi - Display wifi signal strength
+- ftpane.sh - Choose a tmux pane with fzf
 
 If you wish to use the scripts in your tmux segments add them to your path and call them in your tmux configuration.
 ```
